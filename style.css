@@ -12,22 +12,19 @@ body {
 body section {
   height: 100vh;
   background-color: #000000;
-  margin: 0;
-  padding: 0;
 }
 
-body section video {
+body section:before {
+  content: "";
   position: absolute;
-  margin: 0;
-  padding: 0;
-  top: 50%;
-  color: #ddd;
+  top: 0;
+  left: 0;
   width: 100%;
-  text-align: center;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  font-size: 5em;
-  letter-spacing: 0.2em;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, right top, from(#f00), color-stop(#f00), color-stop(#0f0), color-stop(#0ff), color-stop(#ff0), to(#0ff));
+  background: linear-gradient(to right, #f00, #f00, #0f0, #0ff, #ff0, #0ff);
+  mix-blend-mode: color;
+  pointer-events: none;
 }
 
 body section h1 {
@@ -49,6 +46,8 @@ body section h1 span {
   display: inline-block;
   -webkit-animation: animate 1s linear forwards;
           animation: animate 1s linear forwards;
+  -webkit-filter: blur(1px);
+          filter: blur(1px);
   opacity: 0;
 }
 
